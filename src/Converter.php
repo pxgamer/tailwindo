@@ -504,7 +504,7 @@ class Converter
 
     protected function convertBreadcrumb()
     {
-        $this->searchAndReplace('breadcrumb', 'flex flex-wrap list-reset pt-3 pb-3 py-4 px-4 mb-4 bg-gray-400 rounded');
+        $this->searchAndReplace('breadcrumb', 'flex flex-wrap pt-3 pb-3 py-4 px-4 mb-4 bg-gray-400 rounded');
         $this->searchAndReplace('breadcrumb-item', 'inline-block px-2 py-2 text-gray-600');
     }
 
@@ -556,7 +556,7 @@ class Converter
         $this->searchAndReplace('dropdown', 'relative');
         $this->searchAndReplace('dropup', 'relative');
         $this->searchAndReplace('dropdown-toggle', ' inline-block w-0 h-0 ml-1 align border-b-0 border-t-1 border-r-1 border-l-1');
-        $this->searchAndReplace('dropdown-menu', ' absolute pin-l z-50 float-left hidden list-reset	 py-2 mt-1 text-base bg-white border border-gray-400 rounded');
+        $this->searchAndReplace('dropdown-menu', ' absolute pin-l z-50 float-left hidden py-2 mt-1 text-base bg-white border border-gray-400 rounded');
         $this->searchAndReplace('dropdown-divider', 'h-0 my-2 overflow-hidden border-t-1 border-gray-400');
         $this->searchAndReplace('dropdown-item', 'block w-full py-1 px-6 font-normal text-gray-900 whitespace-no-wrap border-0');
         $this->searchAndReplace('dropdown-header', 'block py-2 px-6 mb-0 text-sm text-gray-600 whitespace-no-wrap');
@@ -628,7 +628,7 @@ class Converter
 
     protected function convertNavs()
     {
-        $this->searchAndReplace('nav', 'flex flex-wrap list-reset pl-0 mb-0');
+        $this->searchAndReplace('nav', 'flex flex-wrap pl-0 mb-0');
         $this->searchAndReplace('nav-tabs', 'border border-t-0 border-r-0 border-l-0 border-b-1 border-gray-400');
         $this->searchAndReplace('nav-pills', '');
         $this->searchAndReplace('nav-fill', '');
@@ -659,7 +659,7 @@ class Converter
 
         $this->searchAndReplace('navbar', 'relative flex flex-wrap items-center content-between py-2 px-4');
         $this->searchAndReplace('navbar-brand', 'inline-block pt-1 pb-1 mr-4 text-lg whitespace-no-wrap');
-        $this->searchAndReplace('navbar-nav', 'flex flex-wrap list-reset pl-0 mb-0');
+        $this->searchAndReplace('navbar-nav', 'flex flex-wrap pl-0 mb-0');
         $this->searchAndReplace('navbar-text', 'inline-block pt-2 pb-2');
         $this->searchAndReplace('navbar-collapse', 'flex-grow items-center');
         $this->searchAndReplace('navbar-expand', 'flex-no-wrap content-start');
@@ -669,7 +669,7 @@ class Converter
 
     protected function convertPagination()
     {
-        $this->searchAndReplace('pagination', 'flex list-reset pl-0 rounded');
+        $this->searchAndReplace('pagination', 'flex pl-0 rounded');
         $this->searchAndReplace('pagination-lg', 'text-xl');
         $this->searchAndReplace('pagination-sm', 'text-sm');
         $this->searchAndReplace('page-link', 'relative block py-2 px-3 -ml-px leading-normal text-blue-500 bg-white border border-gray-500 no-underline hover:text-blue-800 hover:bg-gray-400');
