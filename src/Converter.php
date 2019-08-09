@@ -478,7 +478,7 @@ class Converter
     {
         $this->searchAndReplace('alert', 'relative px-3 py-3 mb-4 border rounded');
         $this->searchAndReplace('alert-heading', ''); //color: inherit
-        $this->searchAndReplace('alert-link', 'font-bold no-underline');
+        $this->searchAndReplace('alert-link', 'font-bold');
         $this->searchAndReplace('alert-dismissible', '');
 
         foreach ($this->colors as $btColor => $twColor) {
@@ -510,7 +510,7 @@ class Converter
 
     protected function convertButtons()
     {
-        $this->searchAndReplace('btn', 'inline-block align-middle text-center select-none border font-normal whitespace-no-wrap py-2 px-4 rounded text-base leading-normal no-underline');
+        $this->searchAndReplace('btn', 'inline-block align-middle text-center select-none border font-normal whitespace-no-wrap py-2 px-4 rounded text-base leading-normal');
         $this->searchAndReplace('btn-group', 'relative inline-flex align-middle');
         $this->searchAndReplace('btn-group-vertical', 'relative inline-flex align-middle flex-col items-start justify-center');
         $this->searchAndReplace('btn-toolbar', 'flex flex-wrap justify-start');
@@ -607,7 +607,7 @@ class Converter
     {
         $this->searchAndReplace('list-group', 'flex flex-col pl-0 mb-0 border rounded border-gray-400');
         $this->searchAndReplace('list-group-item-action', 'w-fill');
-        $this->searchAndReplace('list-group-item', 'relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-gray-400 no-underline');
+        $this->searchAndReplace('list-group-item', 'relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-gray-400');
         $this->searchAndReplace('list-group-flush', '');
 
         foreach ($this->colors as $btColor => $twColor) {
@@ -634,7 +634,7 @@ class Converter
         $this->searchAndReplace('nav-fill', '');
         $this->searchAndReplace('nav-justified', '');
 
-        $navLinkClasses = 'inline-block py-2 px-4 no-underline';
+        $navLinkClasses = 'inline-block py-2 px-4';
         $navItemClasses = '';
 
         if ($this->isInLastSearches('nav-tabs', 5)) {
@@ -672,7 +672,7 @@ class Converter
         $this->searchAndReplace('pagination', 'flex pl-0 rounded');
         $this->searchAndReplace('pagination-lg', 'text-xl');
         $this->searchAndReplace('pagination-sm', 'text-sm');
-        $this->searchAndReplace('page-link', 'relative block py-2 px-3 -ml-px leading-normal text-blue-500 bg-white border border-gray-500 no-underline hover:text-blue-800 hover:bg-gray-400');
+        $this->searchAndReplace('page-link', 'relative block py-2 px-3 -ml-px leading-normal text-blue-500 bg-white border border-gray-500 hover:text-blue-800 hover:bg-gray-400');
         // $this->searchAndReplace('page-link', 'relative block py-2 px-3 -ml-px leading-normal text-blue-500 bg-white border border-gray-500');
     }
 
