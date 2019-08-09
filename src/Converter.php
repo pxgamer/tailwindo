@@ -281,7 +281,7 @@ class Converter
         }
 
         foreach ($this->colors as $btColor => $twColor) {
-            $this->searchAndReplace('border-'.$btColor, 'border-'.$twColor);
+            $this->searchAndReplace('border-'.$btColor, 'border-'.$twColor.'-500');
         }
 
         foreach ([
@@ -299,10 +299,10 @@ class Converter
     protected function convertColors()
     {
         foreach ($this->colors as $btColor => $twColor) {
-            $this->searchAndReplace('text-'.$btColor, 'text-'.$twColor);
-            $this->searchAndReplace('bg-'.$btColor, 'bg-'.$twColor);
-            $this->searchAndReplace('table-'.$btColor, 'bg-'.$twColor);
-            // $this->searchAndReplace('bg-gradient-'.$btColor, 'bg-'.$twColor);
+            $this->searchAndReplace('text-'.$btColor, 'text-'.$twColor.'-500');
+            $this->searchAndReplace('bg-'.$btColor, 'bg-'.$twColor.'-500');
+            $this->searchAndReplace('table-'.$btColor, 'bg-'.$twColor.'-500');
+            // $this->searchAndReplace('bg-gradient-'.$btColor, 'bg-'.$twColor.'-500');
         }
     }
 
@@ -482,7 +482,7 @@ class Converter
         $this->searchAndReplace('alert-dismissible', '');
 
         foreach ($this->colors as $btColor => $twColor) {
-            $this->searchAndReplace('alert-'.$btColor, 'text-'.$twColor.'-800'.' border-'.$twColor.'-600 bg-'.$twColor.'-200');
+            $this->searchAndReplace('alert-'.$btColor, 'text-'.$twColor.'-800 border-'.$twColor.'-600 bg-'.$twColor.'-200');
         }
     }
 
@@ -497,7 +497,7 @@ class Converter
             } elseif ($btColor == 'light') {
                 $this->searchAndReplace('badge-'.$btColor, 'text-gray-900 bg-gray-400');
             } else {
-                $this->searchAndReplace('badge-'.$btColor, 'text-'.$twColor.'-800'.' bg-'.$twColor.'-400');
+                $this->searchAndReplace('badge-'.$btColor, 'text-'.$twColor.'-800 bg-'.$twColor.'-400');
             }
         }
     }
@@ -526,7 +526,7 @@ class Converter
         }
 
         foreach ($this->colors as $btColor => $twColor) {
-            $this->searchAndReplace('btn-'.$btColor, 'text-'.$twColor.'-100 bg-'.$twColor.' hover:bg-'.$twColor.'-400');
+            $this->searchAndReplace('btn-'.$btColor, 'text-'.$twColor.'-100 bg-'.$twColor.'-500 hover:bg-'.$twColor.'-400');
             $this->searchAndReplace('btn-outline-'.$btColor, 'text-'.$twColor.'-600 border-'.$twColor.' bg-white hover:bg-'.$twColor.'-400 hover:text-'.$twColor.'-800');
         }
     }
