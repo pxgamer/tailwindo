@@ -411,7 +411,7 @@ class Converter
         $this->searchAndReplace('text-capitalize', 'capitalize');
 
         $this->searchAndReplace('initialism', '');
-        $this->searchAndReplace('lead', 'text-lg font-400');
+        $this->searchAndReplace('lead', 'text-lg font-light');
         $this->searchAndReplace('small', 'text-sm');
         $this->searchAndReplace('mark', '');
         $this->searchAndReplace('display-1', 'text-xl');
@@ -431,7 +431,7 @@ class Converter
 
         $this->searchAndReplace('font-weight-bold', 'font-bold');
         $this->searchAndReplace('font-weight-normal', 'font-normal');
-        $this->searchAndReplace('font-weight-400', 'font-400');
+        $this->searchAndReplace('font-weight-400', 'font-light');
         $this->searchAndReplace('font-italic', 'italic');
     }
 
