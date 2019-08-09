@@ -36,16 +36,16 @@ class Converter
     ];
 
     protected $colors = [
-        'primary'   => 'blue-500',
-        'secondary' => 'gray-500',
-        'success'   => 'green-500',
-        'danger'    => 'red-500',
-        'warning'   => 'yellow-500',
-        'info'      => 'teal-500',
-        'light'     => 'gray-100',
-        'dark'      => 'gray-900',
+        'primary'   => 'blue',
+        'secondary' => 'gray',
+        'success'   => 'green',
+        'danger'    => 'red',
+        'warning'   => 'yellow',
+        'info'      => 'teal',
+        'light'     => 'gray',
+        'dark'      => 'black',
         'white'     => 'white',
-        'muted'     => 'gray-500',
+        'muted'     => 'gray',
     ];
 
     /**
