@@ -203,7 +203,7 @@ class Converter
                 // 'collapse' => 'hidden',
                 'collapsing' => 'relative h-0 overflow-hidden ', //there should be a h-0
 
-                'close' => 'absolute pin-t pin-b pin-r px-4 py-3',
+                'close' => 'absolute top-0 bottom-0 right-0 px-4 py-3',
 
                 //http://getbootstrap.com/docs/4.0/components/jumbotron/
                 'jumbotron'       => 'py-8 px-4 mb-8 bg-gray-200 rounded',
@@ -452,8 +452,8 @@ class Converter
             'position-absolute' => 'absolute',
             'position-fixed' => 'fixed',
             'position-sticky' => '',
-            'fixed-top' => 'pin-t',
-            'fixed-bottom' => 'pin-b',
+            'fixed-top' => 'top-0',
+            'fixed-bottom' => 'bottom-0',
         ] as $btPosition => $twPosition) {
             $this->searchAndReplace($btPosition, $twPosition);
         }
@@ -543,7 +543,7 @@ class Converter
         $this->searchAndReplace('card-footer', 'py-3 px-6 bg-gray-200 border-t-1 border-gray-400');
         $this->searchAndReplace('card-header-tabs', 'border-b-0 -ml-2 -mb-3');
         $this->searchAndReplace('card-header-pills', '-ml-3 -mr-3');
-        $this->searchAndReplace('card-img-overlay', 'absolute pin-y pin-x p-6');
+        $this->searchAndReplace('card-img-overlay', 'absolute inset-y-0 inset-x-0 p-6');
         $this->searchAndReplace('card-img', 'w-full rounded');
         $this->searchAndReplace('card-img-top', 'w-full rounded rounded-t');
         $this->searchAndReplace('card-img-bottom', 'w-full rounded rounded-b');
@@ -556,7 +556,7 @@ class Converter
         $this->searchAndReplace('dropdown', 'relative');
         $this->searchAndReplace('dropup', 'relative');
         $this->searchAndReplace('dropdown-toggle', ' inline-block w-0 h-0 ml-1 align border-b-0 border-t-1 border-r-1 border-l-1');
-        $this->searchAndReplace('dropdown-menu', ' absolute pin-l z-50 float-left hidden py-2 mt-1 text-base bg-white border border-gray-400 rounded');
+        $this->searchAndReplace('dropdown-menu', ' absolute left-0 z-50 float-left hidden py-2 mt-1 text-base bg-white border border-gray-400 rounded');
         $this->searchAndReplace('dropdown-divider', 'h-0 my-2 overflow-hidden border-t-1 border-gray-400');
         $this->searchAndReplace('dropdown-item', 'block w-full py-1 px-6 font-normal text-gray-900 whitespace-no-wrap border-0');
         $this->searchAndReplace('dropdown-header', 'block py-2 px-6 mb-0 text-sm text-gray-600 whitespace-no-wrap');
