@@ -36,16 +36,16 @@ class Converter
     ];
 
     protected $colors = [
-        'primary'   => 'blue',
-        'secondary' => 'grey',
-        'success'   => 'green',
-        'danger'    => 'red',
-        'warning'   => 'yellow',
-        'info'      => 'teal',
-        'light'     => 'grey-lightest',
-        'dark'      => 'black',
+        'primary'   => 'blue-500',
+        'secondary' => 'gray-500',
+        'success'   => 'green-500',
+        'danger'    => 'red-500',
+        'warning'   => 'yellow-500',
+        'info'      => 'teal-500',
+        'light'     => 'gray-100',
+        'dark'      => 'gray-900',
         'white'     => 'white',
-        'muted'     => 'grey',
+        'muted'     => 'gray-500',
     ];
 
     /**
@@ -180,7 +180,7 @@ class Converter
 
                 //http://getbootstrap.com/docs/4.0/content/images/
                 'img-fluid'     => 'max-w-full h-auto',
-                'img-thumbnail' => 'max-w-full h-auto border-1 border-grey rounded p-1',
+                'img-thumbnail' => 'max-w-full h-auto border-1 border-gray-500 rounded p-1',
 
                 //http://getbootstrap.com/docs/4.0/content/tables/
                 'table'    => 'w-full max-w-full mb-4 bg-transparent',
@@ -193,7 +193,7 @@ class Converter
                 //http://getbootstrap.com/docs/4.0/content/figures/
                 'figure'         => 'inline-block mb-4',
                 'figure-img'     => 'mb-2 leading-none',
-                'figure-caption' => 'text-grey',
+                'figure-caption' => 'text-gray-500',
 
                 'fade'     => 'opacity-0',
                 'show'     => 'opacity-100 block', //need to be checked
@@ -206,7 +206,7 @@ class Converter
                 'close' => 'absolute pin-t pin-b pin-r px-4 py-3',
 
                 //http://getbootstrap.com/docs/4.0/components/jumbotron/
-                'jumbotron'       => 'py-8 px-4 mb-8 bg-grey-lighter rounded',
+                'jumbotron'       => 'py-8 px-4 mb-8 bg-gray-200 rounded',
                 'jumbotron-fluid' => 'pr-0 pl-0 rounded-none',
 
         ];
@@ -411,7 +411,7 @@ class Converter
         $this->searchAndReplace('text-capitalize', 'capitalize');
 
         $this->searchAndReplace('initialism', '');
-        $this->searchAndReplace('lead', 'text-lg font-light');
+        $this->searchAndReplace('lead', 'text-lg font-400');
         $this->searchAndReplace('small', 'text-sm');
         $this->searchAndReplace('mark', '');
         $this->searchAndReplace('display-1', 'text-xl');
@@ -427,11 +427,11 @@ class Converter
         $this->searchAndReplace('h-6', 'mb-2 font-medium leading-tight text-base');
 
         $this->searchAndReplace('blockquote', 'mb-6 text-lg');
-        $this->searchAndReplace('blockquote-footer', 'block text-grey');
+        $this->searchAndReplace('blockquote-footer', 'block text-gray');
 
         $this->searchAndReplace('font-weight-bold', 'font-bold');
         $this->searchAndReplace('font-weight-normal', 'font-normal');
-        $this->searchAndReplace('font-weight-light', 'font-light');
+        $this->searchAndReplace('font-weight-400', 'font-400');
         $this->searchAndReplace('font-italic', 'italic');
     }
 
@@ -482,7 +482,7 @@ class Converter
         $this->searchAndReplace('alert-dismissible', '');
 
         foreach ($this->colors as $btColor => $twColor) {
-            $this->searchAndReplace('alert-'.$btColor, 'text-'.$twColor.'-darker'.' border-'.$twColor.'-dark bg-'.$twColor.'-lighter');
+            $this->searchAndReplace('alert-'.$btColor, 'text-'.$twColor.'-800'.' border-'.$twColor.'-600 bg-'.$twColor.'-200');
         }
     }
 
@@ -493,19 +493,19 @@ class Converter
 
         foreach ($this->colors as $btColor => $twColor) {
             if ($btColor === 'dark') {
-                $this->searchAndReplace('badge-'.$btColor, 'text-white bg-black');
+                $this->searchAndReplace('badge-'.$btColor, 'text-white bg-gray-900');
             } elseif ($btColor == 'light') {
-                $this->searchAndReplace('badge-'.$btColor, 'text-black bg-grey-light');
+                $this->searchAndReplace('badge-'.$btColor, 'text-gray-900 bg-gray-400');
             } else {
-                $this->searchAndReplace('badge-'.$btColor, 'text-'.$twColor.'-darker'.' bg-'.$twColor.'-light');
+                $this->searchAndReplace('badge-'.$btColor, 'text-'.$twColor.'-800'.' bg-'.$twColor.'-400');
             }
         }
     }
 
     protected function convertBreadcrumb()
     {
-        $this->searchAndReplace('breadcrumb', 'flex flex-wrap list-reset pt-3 pb-3 py-4 px-4 mb-4 bg-grey-light rounded');
-        $this->searchAndReplace('breadcrumb-item', 'inline-block px-2 py-2 text-grey-dark');
+        $this->searchAndReplace('breadcrumb', 'flex flex-wrap list-reset pt-3 pb-3 py-4 px-4 mb-4 bg-gray-400 rounded');
+        $this->searchAndReplace('breadcrumb-item', 'inline-block px-2 py-2 text-gray-600');
     }
 
     protected function convertButtons()
@@ -514,7 +514,7 @@ class Converter
         $this->searchAndReplace('btn-group', 'relative inline-flex align-middle');
         $this->searchAndReplace('btn-group-vertical', 'relative inline-flex align-middle flex-col items-start justify-center');
         $this->searchAndReplace('btn-toolbar', 'flex flex-wrap justify-start');
-        $this->searchAndReplace('btn-link', 'font-normal blue bg-transparent');
+        $this->searchAndReplace('btn-link', 'font-normal blue-500 bg-transparent');
         $this->searchAndReplace('btn-block', 'block w-full');
 
         foreach ([
@@ -526,21 +526,21 @@ class Converter
         }
 
         foreach ($this->colors as $btColor => $twColor) {
-            $this->searchAndReplace('btn-'.$btColor, 'text-'.$twColor.'-lightest bg-'.$twColor.' hover:bg-'.$twColor.'-light');
-            $this->searchAndReplace('btn-outline-'.$btColor, 'text-'.$twColor.'-dark border-'.$twColor.' bg-white hover:bg-'.$twColor.'-light hover:text-'.$twColor.'-darker');
+            $this->searchAndReplace('btn-'.$btColor, 'text-'.$twColor.'-100 bg-'.$twColor.' hover:bg-'.$twColor.'-400');
+            $this->searchAndReplace('btn-outline-'.$btColor, 'text-'.$twColor.'-600 border-'.$twColor.' bg-white hover:bg-'.$twColor.'-400 hover:text-'.$twColor.'-800');
         }
     }
 
     protected function convertCards()
     {
-        $this->searchAndReplace('card', 'relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-grey-light');
+        $this->searchAndReplace('card', 'relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-400');
         $this->searchAndReplace('card-body', 'flex-auto p-6');
         $this->searchAndReplace('card-title', 'mb-3');
         $this->searchAndReplace('card-text', 'mb-0');
         $this->searchAndReplace('card-subtitle', '-mt-2 mb-0');
         $this->searchAndReplace('card-link', 'ml-6');
-        $this->searchAndReplace('card-header', 'py-3 px-6 mb-0 bg-grey-lighter border-b-1 border-grey-light text-grey-darkest');
-        $this->searchAndReplace('card-footer', 'py-3 px-6 bg-grey-lighter border-t-1 border-grey-light');
+        $this->searchAndReplace('card-header', 'py-3 px-6 mb-0 bg-gray-200 border-b-1 border-gray-400 text-gray-900');
+        $this->searchAndReplace('card-footer', 'py-3 px-6 bg-gray-200 border-t-1 border-gray-400');
         $this->searchAndReplace('card-header-tabs', 'border-b-0 -ml-2 -mb-3');
         $this->searchAndReplace('card-header-pills', '-ml-3 -mr-3');
         $this->searchAndReplace('card-img-overlay', 'absolute pin-y pin-x p-6');
@@ -556,16 +556,16 @@ class Converter
         $this->searchAndReplace('dropdown', 'relative');
         $this->searchAndReplace('dropup', 'relative');
         $this->searchAndReplace('dropdown-toggle', ' inline-block w-0 h-0 ml-1 align border-b-0 border-t-1 border-r-1 border-l-1');
-        $this->searchAndReplace('dropdown-menu', ' absolute pin-l z-50 float-left hidden list-reset	 py-2 mt-1 text-base bg-white border border-grey-light rounded');
-        $this->searchAndReplace('dropdown-divider', 'h-0 my-2 overflow-hidden border-t-1 border-grey-light');
-        $this->searchAndReplace('dropdown-item', 'block w-full py-1 px-6 font-normal text-grey-darkest whitespace-no-wrap border-0');
-        $this->searchAndReplace('dropdown-header', 'block py-2 px-6 mb-0 text-sm text-greay-dark whitespace-no-wrap');
+        $this->searchAndReplace('dropdown-menu', ' absolute pin-l z-50 float-left hidden list-reset	 py-2 mt-1 text-base bg-white border border-gray-400 rounded');
+        $this->searchAndReplace('dropdown-divider', 'h-0 my-2 overflow-hidden border-t-1 border-gray-400');
+        $this->searchAndReplace('dropdown-item', 'block w-full py-1 px-6 font-normal text-gray-900 whitespace-no-wrap border-0');
+        $this->searchAndReplace('dropdown-header', 'block py-2 px-6 mb-0 text-sm text-gray-600 whitespace-no-wrap');
     }
 
     protected function convertForms()
     {
         $this->searchAndReplace('form-group', 'mb-4');
-        $this->searchAndReplace('form-control', 'block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-grey-darker border border-grey rounded');
+        $this->searchAndReplace('form-control', 'block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-500 rounded');
         $this->searchAndReplace('form-control-lg', 'py-2 px-4 text-lg leading-normal rounded');
         $this->searchAndReplace('form-control-sm', 'py-1 px-2 text-sm leading-normal rounded');
         $this->searchAndReplace('form-control-file', 'block appearance-none');
@@ -583,40 +583,40 @@ class Converter
         $this->searchAndReplace('form-text', 'block mt-1');
         $this->searchAndReplace('form-row', 'flex flex-wrap -mr-1 -ml-1');
         $this->searchAndReplace('form-check', 'relative block mb-2');
-        $this->searchAndReplace('form-check-label', 'text-grey-dark pl-6 mb-0');
+        $this->searchAndReplace('form-check-label', 'text-gray-600 pl-6 mb-0');
         $this->searchAndReplace('form-check-input', 'absolute mt-1 -ml-6');
 
         $this->searchAndReplace('form-check-inline', 'inline-block mr-2');
         $this->searchAndReplace('valid-feedback', 'hidden mt-1 text-sm text-green');
-        $this->searchAndReplace('valid-tooltip', 'absolute z-10 hidden w-4 font-normal leading-normal text-white rounded p-2 bg-green-dark');
-        $this->searchAndReplace('is-valid', 'bg-green-dark');
+        $this->searchAndReplace('valid-tooltip', 'absolute z-10 hidden w-4 font-normal leading-normal text-white rounded p-2 bg-green-600');
+        $this->searchAndReplace('is-valid', 'bg-green-600');
         $this->searchAndReplace('invalid-feedback', 'hidden mt-1 text-sm text-red');
-        $this->searchAndReplace('invalid-tooltip', 'absolute z-10 hidden w-4 font-normal leading-normal text-white rounded p-2 bg-red-dark');
-        $this->searchAndReplace('is-invalid', 'bg-red-dark');
+        $this->searchAndReplace('invalid-tooltip', 'absolute z-10 hidden w-4 font-normal leading-normal text-white rounded p-2 bg-red-600');
+        $this->searchAndReplace('is-invalid', 'bg-red-600');
     }
 
     protected function convertInputGroups()
     {
         $this->searchAndReplace('input-group', 'relative flex items-stretch w-full');
-        $this->searchAndReplace('input-group-addon', 'py-1 px-2 mb-1 text-base font-normal leading-normal text-grey-darkest text-center bg-grey-light border border-4 border-grey-lighter rounded');
+        $this->searchAndReplace('input-group-addon', 'py-1 px-2 mb-1 text-base font-normal leading-normal text-gray-900 text-center bg-gray-400 border border-4 border-gray-200 rounded');
         $this->searchAndReplace('input-group-addon-lg', 'py-2 px-3 mb-0 text-lg');
         $this->searchAndReplace('input-group-addon-sm', 'py-3 px-4 mb-0 text-lg');
     }
 
     protected function convertListGroups()
     {
-        $this->searchAndReplace('list-group', 'flex flex-col pl-0 mb-0 border rounded border-grey-light');
+        $this->searchAndReplace('list-group', 'flex flex-col pl-0 mb-0 border rounded border-gray-400');
         $this->searchAndReplace('list-group-item-action', 'w-fill');
-        $this->searchAndReplace('list-group-item', 'relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-grey-light no-underline');
+        $this->searchAndReplace('list-group-item', 'relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-gray-400 no-underline');
         $this->searchAndReplace('list-group-flush', '');
 
         foreach ($this->colors as $btColor => $twColor) {
             if ($btColor === 'dark') {
-                $this->searchAndReplace('list-group-item-'.$btColor, 'text-white bg-grey-dark');
+                $this->searchAndReplace('list-group-item-'.$btColor, 'text-white bg-gray-600');
             } elseif ($btColor == 'light') {
-                $this->searchAndReplace('list-group-item-'.$btColor, 'text-black bg-grey-light');
+                $this->searchAndReplace('list-group-item-'.$btColor, 'text-gray-900 bg-gray-400');
             } else {
-                $this->searchAndReplace('list-group-item-'.$btColor, 'bg-'.$twColor.'-lighter text-'.$twColor.'-darkest');
+                $this->searchAndReplace('list-group-item-'.$btColor, 'bg-'.$twColor.'-200 text-'.$twColor.'-900');
             }
         }
     }
@@ -629,7 +629,7 @@ class Converter
     protected function convertNavs()
     {
         $this->searchAndReplace('nav', 'flex flex-wrap list-reset pl-0 mb-0');
-        $this->searchAndReplace('nav-tabs', 'border border-t-0 border-r-0 border-l-0 border-b-1 border-grey-light');
+        $this->searchAndReplace('nav-tabs', 'border border-t-0 border-r-0 border-l-0 border-b-1 border-gray-400');
         $this->searchAndReplace('nav-pills', '');
         $this->searchAndReplace('nav-fill', '');
         $this->searchAndReplace('nav-justified', '');
@@ -643,7 +643,7 @@ class Converter
         }
 
         if ($this->isInLastSearches('nav-pills', 5)) {
-            $navLinkClasses .= ' border border-blue bg-blue rounded text-white mx-1';
+            $navLinkClasses .= ' border border-blue-500 bg-blue-500 rounded text-white mx-1';
         }
 
         if ($this->isInLastSearches('nav-fill', 5)) {
@@ -672,8 +672,8 @@ class Converter
         $this->searchAndReplace('pagination', 'flex list-reset pl-0 rounded');
         $this->searchAndReplace('pagination-lg', 'text-xl');
         $this->searchAndReplace('pagination-sm', 'text-sm');
-        $this->searchAndReplace('page-link', 'relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-grey no-underline hover:text-blue-darker hover:bg-grey-light');
-        // $this->searchAndReplace('page-link', 'relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-grey');
+        $this->searchAndReplace('page-link', 'relative block py-2 px-3 -ml-px leading-normal text-blue-500 bg-white border border-gray-500 no-underline hover:text-blue-800 hover:bg-gray-400');
+        // $this->searchAndReplace('page-link', 'relative block py-2 px-3 -ml-px leading-normal text-blue-500 bg-white border border-gray-500');
     }
 
     /**
